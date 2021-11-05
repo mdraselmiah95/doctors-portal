@@ -6,7 +6,7 @@ import React from "react";
 const Service = (props) => {
   const { description, img, name } = props.service;
   return (
-    <Grid item xs={2} sm={4} md={4}>
+    <Grid item xs={4} sm={4} md={4}>
       <Card sx={{ minWidth: 275, border: 0, boxShadow: 0 }}>
         <CardMedia
           component="img"
