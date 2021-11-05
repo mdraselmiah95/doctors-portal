@@ -17,7 +17,11 @@ const AppointmentBanner = () => {
     <Box sx={{ flexGrow: 1 }} style={appointmentBanner}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <img src={doctor} alt="doctor" style={{ width: 400 }} />
+          <img
+            src={doctor}
+            alt="doctor"
+            style={{ width: 400, marginTop: -115 }}
+          />
         </Grid>
         <Grid item xs={4} md={6}>
           <Typography variant="h5" sx={{ mb: 5 }} style={{ color: "#5CE7ED" }}>
