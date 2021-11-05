@@ -7,6 +7,9 @@ import doctor from "../../../images/doctor.png";
 
 const appointmentBanner = {
   background: `url(${bg})`,
+  backgroundColor: "rgba(45, 58, 74, 0.9)",
+  backgroundBlendMode: "darken, luminosity",
+  marginTop: 175,
 };
 
 const AppointmentBanner = () => {
