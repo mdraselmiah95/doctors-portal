@@ -19,7 +19,9 @@ const Service = (props) => {
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {name}
           </Typography>
-          <Typography variant="body2">{description}</Typography>
+          <Typography variant="body2" color="text.secondary">
+            {description}
+          </Typography>
         </CardContent>
       </Card>
     </Grid>
