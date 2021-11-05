@@ -24,24 +24,40 @@ const AppointmentBanner = () => {
             style={{ width: 400, marginTop: -115 }}
           />
         </Grid>
-        <Grid item xs={4} md={6}>
-          <Typography variant="h5" sx={{ mb: 5 }} style={{ color: "#5CE7ED" }}>
-            Appointment
-          </Typography>
-          <Typography variant="h4" style={{ color: "white" }}>
-            Make an Appointment Today
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{ my: 5 }}
-            style={{ color: "white", fontSize: 14, fontWeight: 300 }}
-          >
-            Dental is re-imagining what the dental experience can be and proudly
-            setting a new standard for patient care.
-          </Typography>
-          <Button variant="contained" style={{ backgroundColor: "#5CE7ED" }}>
-            Learn More
-          </Button>
+        <Grid
+          item
+          xs={4}
+          md={6}
+          sx={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            textAlign: "left",
+          }}
+        >
+          <Box>
+            <Typography
+              variant="h5"
+              sx={{ mb: 3 }}
+              style={{ color: "#5CE7ED" }}
+            >
+              Appointment
+            </Typography>
+            <Typography variant="h4" style={{ color: "white" }}>
+              Make an Appointment Today
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ my: 3 }}
+              style={{ color: "white", fontSize: 14, fontWeight: 300 }}
+            >
+              Dental is re-imagining what the dental experience can be and
+              proudly setting a new standard for patient care.
+            </Typography>
+            <Button variant="contained" style={{ backgroundColor: "#5CE7ED" }}>
+              Learn More
+            </Button>
+          </Box>
         </Grid>
       </Grid>
     </Box>
