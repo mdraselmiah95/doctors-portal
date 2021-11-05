@@ -9,6 +9,7 @@ const appointmentBanner = {
   background: `url(${bg})`,
   backgroundColor: "rgba(45, 58, 74, 0.9)",
   backgroundBlendMode: "darken, luminosity",
+  backgroundPosition: "center",
   marginTop: 175,
 };
 
