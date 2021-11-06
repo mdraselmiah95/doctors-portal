@@ -4,6 +4,9 @@ import { NavLink } from "react-router-dom";
 import login from "../../images/login.png";
 
 const LogIn = () => {
+  const handleLogInSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <Container>
       <Grid container spacing={2}>
@@ -11,7 +14,7 @@ const LogIn = () => {
           <Typography variant="body1" gutterBottom>
             Login
           </Typography>
-          <form>
+          <form onSubmit={handleLogInSubmit}>
             <TextField
               sx={{ width: "75%", m: 1 }}
               id="standard-basic"
