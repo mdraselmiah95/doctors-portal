@@ -10,6 +10,7 @@ const Booking = ({ booking, date }) => {
   const [openBooking, setBookingOpen] = React.useState(false);
   const handleBookingOpen = () => setBookingOpen(true);
   const handleBookingClose = () => setBookingOpen(false);
+
   return (
     <>
       <Grid item xs={12} sm={6} md={4}>
