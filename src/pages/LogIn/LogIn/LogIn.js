@@ -1,7 +1,7 @@
 import { Button, Container, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import login from "../../images/login.png";
+import login from "../../../images/login.png";
 
 const LogIn = () => {
   const [loginData, setLoginData] = useState({});
