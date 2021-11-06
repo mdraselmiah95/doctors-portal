@@ -88,7 +88,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
             <Button
               type="submit"
               variant="contained"
-              sx={{ backgroundColor: "#1CC7C1" }}
+              sx={{ backgroundColor: "#1CC7C1", m: 1 }}
             >
               Submit
             </Button>
