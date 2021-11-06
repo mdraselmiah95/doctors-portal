@@ -3,6 +3,7 @@ import "./App.css";
 import Appointment from "./pages/Appointment/Appointment/Appointment";
 import Home from "./pages/Home/Home/Home";
 import LogIn from "./pages/LogIn/LogIn/LogIn";
+import Register from "./pages/LogIn/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/login">
             <LogIn />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
           <Route path="*">
             <NotFound />
