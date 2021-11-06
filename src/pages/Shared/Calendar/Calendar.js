@@ -4,15 +4,14 @@ import StaticDatePicker from "@mui/lab/StaticDatePicker";
 import TextField from "@mui/material/TextField";
 import React from "react";
 
-const Calendar = () => {
-  const [value, setValue] = React.useState(new Date());
+const Calendar = ({ date, setDate }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <StaticDatePicker
         displayStaticWrapperAs="desktop"
-        value={value}
+        value={date}
         onChange={(newValue) => {
-          setValue(newValue);
+          setDate(newValue);
         }}
         renderInput={(params) => <TextField {...params} />}
       />
