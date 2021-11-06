@@ -1,4 +1,5 @@
 import {
+  Alert,
   Button,
   CircularProgress,
   Container,
@@ -83,9 +84,9 @@ const Register = () => {
           )}
 
           {isLoading && <CircularProgress />}
-          {/* {user?.email && (
-                        <Alert severity="success">User Created successfully!</Alert>
-                    )} */}
+          {user?.email && (
+            <Alert severity="success">User Created successfully!</Alert>
+          )}
           {/* {authError && <Alert severity="error">{authError}</Alert>} */}
         </Grid>
         <Grid item xs={12} md={6}>
