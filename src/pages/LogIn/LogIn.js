@@ -1,6 +1,7 @@
 import { Button, Container, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import login from "../../images/login.png";
 
 const LogIn = () => {
   return (
@@ -10,7 +11,7 @@ const LogIn = () => {
           <Typography variant="body1" gutterBottom>
             Login
           </Typography>
-          <form onSubmit={handleLoginSubmit}>
+          <form>
             <TextField
               sx={{ width: "75%", m: 1 }}
               id="standard-basic"
