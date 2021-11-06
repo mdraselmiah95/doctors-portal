@@ -1,9 +1,10 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import initializeFirebase from "../pages/LogIn/Firebase/firebase.init";
 
 initializeFirebase();
@@ -25,6 +26,20 @@ const useFirebase = () => {
         // ..
       });
   };
+
+  //Manage Users
+
+  useEffect(() => {
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setUser(user);
+      } else {
+        setUser({});
+      }
+    });
+    return () => unsubscribed;
+  }, []);
 
   const logout = () => {
     signOut(auth)
