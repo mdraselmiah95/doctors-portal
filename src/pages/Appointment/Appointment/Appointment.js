@@ -1,11 +1,14 @@
 import React from "react";
 import Navigation from "../../Shared/Navigation/Navigation";
+import AppointmentHeader from "../AppointmentHeader/AppointmentHeader";
+import AvailableAppointments from "../AvailableAppointments/AvailableAppointments";
 
 const Appointment = () => {
   return (
     <div>
       <Navigation />
-      <h2>This is App</h2>
+      <AppointmentHeader />
+      <AvailableAppointments />
     </div>
   );
 };
