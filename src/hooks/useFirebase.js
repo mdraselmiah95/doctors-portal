@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -24,6 +25,19 @@ const useFirebase = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
+      });
+  };
+
+  const loginUser = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
       });
   };
 
@@ -55,6 +69,7 @@ const useFirebase = () => {
     user,
     registerUser,
     logout,
+    loginUser,
   };
 };
 
