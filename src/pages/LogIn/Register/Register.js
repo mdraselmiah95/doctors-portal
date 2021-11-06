@@ -1,4 +1,11 @@
-import { Button, Container, Grid, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
@@ -6,7 +13,7 @@ import login from "../../../images/login.png";
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
-  const { user, registerUser } = useAuth();
+  const { user, registerUser, isLoading } = useAuth();
 
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -32,48 +39,50 @@ const Register = () => {
             Register
           </Typography>
 
-          <form onSubmit={handleRegisterSubmit}>
-            <TextField
-              sx={{ width: "75%", m: 1 }}
-              id="standard-basic"
-              label="Your Email"
-              name="email"
-              type="email"
-              onChange={handleOnChange}
-              variant="standard"
-            />
-            <TextField
-              sx={{ width: "75%", m: 1 }}
-              id="standard-basic"
-              label="Your Password"
-              type="password"
-              name="password"
-              onChange={handleOnChange}
-              variant="standard"
-            />
-            <TextField
-              sx={{ width: "75%", m: 1 }}
-              id="standard-basic"
-              label="ReType Your Password"
-              type="password"
-              name="password2"
-              onChange={handleOnChange}
-              variant="standard"
-            />
+          {!isLoading && (
+            <form onSubmit={handleRegisterSubmit}>
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Your Email"
+                name="email"
+                type="email"
+                onChange={handleOnChange}
+                variant="standard"
+              />
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="Your Password"
+                type="password"
+                name="password"
+                onChange={handleOnChange}
+                variant="standard"
+              />
+              <TextField
+                sx={{ width: "75%", m: 1 }}
+                id="standard-basic"
+                label="ReType Your Password"
+                type="password"
+                name="password2"
+                onChange={handleOnChange}
+                variant="standard"
+              />
 
-            <Button
-              sx={{ width: "75%", m: 1 }}
-              type="submit"
-              variant="contained"
-            >
-              Register
-            </Button>
-            <NavLink style={{ textDecoration: "none" }} to="/login">
-              <Button variant="text">Already Registered? Please Login</Button>
-            </NavLink>
-          </form>
+              <Button
+                sx={{ width: "75%", m: 1 }}
+                type="submit"
+                variant="contained"
+              >
+                Register
+              </Button>
+              <NavLink style={{ textDecoration: "none" }} to="/login">
+                <Button variant="text">Already Registered? Please Login</Button>
+              </NavLink>
+            </form>
+          )}
 
-          {/* {isLoading && <CircularProgress />} */}
+          {isLoading && <CircularProgress />}
           {/* {user?.email && (
                         <Alert severity="success">User Created successfully!</Alert>
                     )} */}
