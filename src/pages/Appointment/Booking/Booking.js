@@ -37,10 +37,12 @@ const Booking = ({ booking, date }) => {
           </Button>
         </Paper>
       </Grid>
-      <BookingModal>
-        handleBookingClose={handleBookingClose}
+      <BookingModal
+        date={date}
+        booking={booking}
         openBooking={openBooking}
-      </BookingModal>
+        handleBookingClose={handleBookingClose}
+      ></BookingModal>
     </>
   );
 };
