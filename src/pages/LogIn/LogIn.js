@@ -10,7 +10,7 @@ const LogIn = () => {
   return (
     <Container>
       <Grid container spacing={2}>
-        <Grid item sx={{ mt: 8, my: "auto" }} xs={12} md={6}>
+        <Grid item sx={{ my: "auto" }} xs={12} md={6}>
           <Typography variant="body1" gutterBottom>
             Login
           </Typography>
