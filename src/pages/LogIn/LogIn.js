@@ -7,7 +7,7 @@ const LogIn = () => {
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
-    console.log(field);
+    console.log(field, value);
   };
 
   const handleLogInSubmit = (e) => {
