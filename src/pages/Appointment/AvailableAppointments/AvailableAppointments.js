@@ -44,7 +44,10 @@ const bookings = [
 const AvailableAppointments = ({ date }) => {
   return (
     <Container>
-      <Typography variant="h4" sx={{ color: "#1CC7C1", mb: 3 }}>
+      <Typography
+        variant="h4"
+        sx={{ color: "#1CC7C1", mb: 3, fontWeight: "bolder" }}
+      >
         Available Appointments on {date.toDateString()}
       </Typography>
       <Grid container spacing={2}>
