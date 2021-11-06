@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import login from "../../images/login.png";
 
 const LogIn = () => {
+  const handleOnChange = (e) => {};
+
   const handleLogInSubmit = (e) => {
     alert("hello");
     e.preventDefault();
@@ -21,7 +23,7 @@ const LogIn = () => {
               id="standard-basic"
               label="Your Email"
               name="email"
-              //   onChange={handleOnChange}
+              onChange={handleOnChange}
               variant="standard"
             />
             <TextField
@@ -30,7 +32,7 @@ const LogIn = () => {
               label="Your Password"
               type="password"
               name="password"
-              //   onChange={handleOnChange}
+              onChange={handleOnChange}
               variant="standard"
             />
 
