@@ -128,12 +128,10 @@ const Dashboard = (props) => {
         <Typography paragraph>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={5}>
-              {/* <Calendar date={date} setDate={setDate}></Calendar> */}
-              <Calendar date={date} setDate={setDate} />
+              <Calendar date={date} setDate={setDate}></Calendar>
             </Grid>
             <Grid item xs={12} sm={7}>
-              {/* <Appointments date={date}></Appointments> */}
-              <Appointments date={date} />
+              <Appointments date={date}></Appointments>
             </Grid>
           </Grid>
         </Typography>
