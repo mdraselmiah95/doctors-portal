@@ -18,6 +18,7 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
+import Calendar from "../../Shared/Calendar/Calendar";
 
 const drawerWidth = 200;
 
@@ -127,6 +128,7 @@ const Dashboard = (props) => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={5}>
               {/* <Calendar date={date} setDate={setDate}></Calendar> */}
+              <Calendar />
             </Grid>
             <Grid item xs={12} sm={7}>
               {/* <Appointments date={date}></Appointments> */}
