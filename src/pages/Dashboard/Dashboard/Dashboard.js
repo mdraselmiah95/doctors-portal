@@ -129,11 +129,11 @@ const Dashboard = (props) => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={5}>
               {/* <Calendar date={date} setDate={setDate}></Calendar> */}
-              <Calendar />
+              <Calendar date={date} setDate={setDate} />
             </Grid>
             <Grid item xs={12} sm={7}>
               {/* <Appointments date={date}></Appointments> */}
-              <Appointments />
+              <Appointments date={date} />
             </Grid>
           </Grid>
         </Typography>
