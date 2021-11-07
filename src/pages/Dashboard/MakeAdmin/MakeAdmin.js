@@ -4,6 +4,10 @@ import React, { useState } from "react";
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
 
+  const handleOnBlur = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleAdminSubmit = (e) => {
     e.preventDefault();
   };
@@ -15,7 +19,7 @@ const MakeAdmin = () => {
           sx={{ width: "50%" }}
           label="Email"
           type="email"
-          //   onBlur={handleOnBlur}
+          onBlur={handleOnBlur}
           variant="standard"
         />
         <Button type="submit" variant="contained">
