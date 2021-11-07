@@ -51,7 +51,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
     };
 
     // send to the server
-    fetch("http://localhost:5000/", {
+    fetch("http://localhost:5000/appointments", {
       method: "POST",
       headers: {
         "content-type": "application/json",
