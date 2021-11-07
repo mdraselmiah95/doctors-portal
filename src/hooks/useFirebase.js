@@ -20,11 +20,13 @@ const useFirebase = () => {
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
-  const registerUser = (email, password, history) => {
+  const registerUser = (email, password, name, history) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setAuthError("");
+        const newUser = { email, displayName: name };
+        setUser(newUser);
         history.replace("/");
       })
       .catch((error) => {
