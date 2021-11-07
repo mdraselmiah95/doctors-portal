@@ -20,7 +20,7 @@ const Register = () => {
     const field = e.target.name;
     const value = e.target.value;
     const newLoginData = { ...loginData };
-    console.log(newLoginData);
+    // console.log(newLoginData);
     newLoginData[field] = value;
     setLoginData(newLoginData);
   };
