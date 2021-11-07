@@ -50,8 +50,18 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
       date: date.toLocaleDateString(),
     };
 
-    console.log(appointment);
     // send to the server
+    fetch("http://localhost:5000/", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(appointment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
 
     handleBookingClose();
     e.preventDefault();
