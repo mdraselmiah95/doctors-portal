@@ -29,7 +29,7 @@ const useFirebase = () => {
         const newUser = { email, displayName: name };
         setUser(newUser);
         // save user to the database
-        saveUser(email, name);
+        saveUser(email, name, "POST");
         //send name ti firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -67,6 +67,7 @@ const useFirebase = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
+        saveUser(user.email, user.displayName, "PUT");
         const destination = location?.state?.from || "/";
         history.replace(destination);
         setAuthError("");
