@@ -17,7 +17,9 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 // import { Link } from "react-router-dom";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import DashboardHome from "../DashboardHome/DashboardHome";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
 
 const drawerWidth = 200;
 
@@ -142,6 +144,17 @@ const Dashboard = (props) => {
             </Grid>
           </Grid>
         </Typography> */}
+        <Switch>
+          <Route exact path={path}>
+            <DashboardHome />
+          </Route>
+          <Route path={`${path}/makeAdmin`}>
+            <MakeAdmin />
+          </Route>
+          {/* <AdminRoute path={`${path}/addDoctor`}>
+            <AddDoctor></AddDoctor>
+          </AdminRoute> */}
+        </Switch>
       </Box>
     </Box>
   );
