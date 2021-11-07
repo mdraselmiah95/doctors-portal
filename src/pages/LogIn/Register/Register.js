@@ -8,12 +8,13 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import login from "../../../images/login.png";
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
+  const history = useHistory();
   const { user, registerUser, isLoading, authError } = useAuth();
 
   const handleOnBlur = (e) => {
@@ -29,7 +30,7 @@ const Register = () => {
       alert("Your password did not match");
       return;
     }
-    registerUser(loginData.email, loginData.password);
+    registerUser(loginData.email, loginData.password, loginData.name, history);
     e.preventDefault();
   };
 
