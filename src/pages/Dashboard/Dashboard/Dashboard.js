@@ -19,6 +19,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 import Calendar from "../../Shared/Calendar/Calendar";
+import Appointments from "../Appointments/Appointments";
 
 const drawerWidth = 200;
 
@@ -132,6 +133,7 @@ const Dashboard = (props) => {
             </Grid>
             <Grid item xs={12} sm={7}>
               {/* <Appointments date={date}></Appointments> */}
+              <Appointments />
             </Grid>
           </Grid>
         </Typography>
