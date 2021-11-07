@@ -18,6 +18,7 @@ import PropTypes from "prop-types";
 import React from "react";
 // import { Link } from "react-router-dom";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import AddDoctor from "../AddDoctor/AddDoctor";
 import DashboardHome from "../DashboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 
@@ -151,9 +152,9 @@ const Dashboard = (props) => {
           <Route path={`${path}/makeAdmin`}>
             <MakeAdmin />
           </Route>
-          {/* <AdminRoute path={`${path}/addDoctor`}>
-            <AddDoctor></AddDoctor>
-          </AdminRoute> */}
+          <Route path={`${path}/addDoctor`}>
+            <AddDoctor />
+          </Route>
         </Switch>
       </Box>
     </Box>
