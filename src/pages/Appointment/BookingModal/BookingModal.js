@@ -40,9 +40,17 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
   };
 
   const handleBookingSubmit = (e) => {
-    alert("submitting");
+    // alert("submitting");
 
     // collect data
+    const appointment = {
+      ...bookingInfo,
+      time,
+      serviceName: name,
+      date: date.toLocaleDateString(),
+    };
+
+    console.log(appointment);
     // send to the server
 
     handleBookingClose();
