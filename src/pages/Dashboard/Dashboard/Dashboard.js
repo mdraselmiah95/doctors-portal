@@ -7,7 +7,6 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -17,17 +16,16 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import React from "react";
-import { Link } from "react-router-dom";
-import Calendar from "../../Shared/Calendar/Calendar";
-import Appointments from "../Appointments/Appointments";
+// import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 const drawerWidth = 200;
 
 const Dashboard = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [date, setDate] = React.useState(new Date());
 
+  let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -38,6 +36,15 @@ const Dashboard = (props) => {
       <Divider />
       <Link to="/appointment">
         <Button color="inherit">Appointment</Button>
+      </Link>
+      <Link to={`${url}`}>
+        <Button color="inherit">Dashboard</Button>
+      </Link>
+      <Link to={`${url}/makeAdmin`}>
+        <Button color="inherit">Make Admin</Button>
+      </Link>
+      <Link to={`${url}/addDoctor`}>
+        <Button color="inherit">Add Doctor</Button>
       </Link>
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
@@ -125,7 +132,7 @@ const Dashboard = (props) => {
         }}
       >
         <Toolbar />
-        <Typography paragraph>
+        {/* <Typography paragraph>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={5}>
               <Calendar date={date} setDate={setDate}></Calendar>
@@ -134,7 +141,7 @@ const Dashboard = (props) => {
               <Appointments date={date}></Appointments>
             </Grid>
           </Grid>
-        </Typography>
+        </Typography> */}
       </Box>
     </Box>
   );
