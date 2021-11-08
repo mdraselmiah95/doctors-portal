@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  getIdToken,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -86,6 +87,9 @@ const useFirebase = () => {
       if (user) {
         const uid = user.uid;
         setUser(user);
+        getIdToken(user).then((idToken) => {
+          console.log(idToken);
+        });
       } else {
         setUser({});
       }
