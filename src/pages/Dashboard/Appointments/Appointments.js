@@ -23,7 +23,7 @@ const Appointments = ({ date }) => {
     })
       .then((res) => res.json())
       .then((data) => setAppointments(data));
-  }, [appointments]);
+  }, [appointments, date, user.email, token]);
 
   return (
     <div>
