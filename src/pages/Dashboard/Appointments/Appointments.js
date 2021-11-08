@@ -13,7 +13,7 @@ const Appointments = ({ date }) => {
   const [appointments, setAppointments] = useState([]);
   //appointments
   useEffect(() => {
-    const url = `http://localhost:5000/appointments?email=${
+    const url = `https://glacial-wave-71858.herokuapp.com/appointments?email=${
       user.email
     }&date=${date.toLocaleDateString()}`;
     fetch(url, {
