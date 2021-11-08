@@ -22,7 +22,6 @@ const MakeAdmin = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setEmail("");
         setSuccess(true);
       });
     e.preventDefault();
