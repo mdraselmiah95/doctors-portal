@@ -19,6 +19,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import AdminRoute from "../../LogIn/AdminRoute/AdminRoute";
 import AddDoctor from "../AddDoctor/AddDoctor";
 import DashboardHome from "../DashboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
@@ -156,12 +157,12 @@ const Dashboard = (props) => {
           <Route exact path={path}>
             <DashboardHome />
           </Route>
-          <Route path={`${path}/makeAdmin`}>
+          <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin />
-          </Route>
-          <Route path={`${path}/addDoctor`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/addDoctor`}>
             <AddDoctor />
-          </Route>
+          </AdminRoute>
         </Switch>
       </Box>
     </Box>
