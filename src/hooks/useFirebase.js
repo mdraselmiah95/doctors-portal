@@ -125,6 +125,7 @@ const useFirebase = () => {
 
   return {
     user,
+    admin,
     registerUser,
     logout,
     loginUser,
