@@ -57,6 +57,7 @@ const BookingModal = ({
       date: date.toLocaleDateString(),
     };
 
+    console.log(appointment);
     // send to the server
     fetch("https://glacial-wave-71858.herokuapp.com/appointments", {
       method: "POST",
