@@ -26,11 +26,11 @@ const Booking = ({ booking, date, setBookingSuccess }) => {
           <Typography variant="h6" gutterBottom component="div">
             {time}
           </Typography>
-          <Typography variant="h6" gutterBottom component="div">
-            {price}
-          </Typography>
           <Typography variant="caption" display="block" gutterBottom>
             {space} SPACES AVAILABLE
+          </Typography>
+          <Typography variant="caption" display="block" gutterBottom>
+            Price ${price}
           </Typography>
           <Button
             onClick={handleBookingOpen}
