@@ -38,6 +38,7 @@ const Booking = ({ booking, date, setBookingSuccess }) => {
           </Button>
         </Paper>
       </Grid>
+
       <BookingModal
         date={date}
         booking={booking}

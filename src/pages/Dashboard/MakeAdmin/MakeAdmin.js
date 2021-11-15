@@ -48,5 +48,4 @@ const MakeAdmin = () => {
     </div>
   );
 };
-
 export default MakeAdmin;
