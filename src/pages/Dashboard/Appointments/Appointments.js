@@ -54,7 +54,7 @@ const Appointments = ({ date }) => {
                   {row.payment ? (
                     "Paid"
                   ) : (
-                    <Link to="">
+                    <Link to={`/dashboard/payment/${row._id}`}>
                       <button>Pay</button>
                     </Link>
                   )}
