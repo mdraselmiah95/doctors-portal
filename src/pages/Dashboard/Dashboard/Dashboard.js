@@ -23,6 +23,7 @@ import AdminRoute from "../../LogIn/AdminRoute/AdminRoute";
 import AddDoctor from "../AddDoctor/AddDoctor";
 import DashboardHome from "../DashboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import Payment from "../Payment/Payment";
 
 const drawerWidth = 200;
 
@@ -157,6 +158,9 @@ const Dashboard = (props) => {
           <Route exact path={path}>
             <DashboardHome />
           </Route>
+          <AdminRoute path={`${path}/payment/:appointmentId`}>
+            <Payment />
+          </AdminRoute>
           <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin />
           </AdminRoute>
