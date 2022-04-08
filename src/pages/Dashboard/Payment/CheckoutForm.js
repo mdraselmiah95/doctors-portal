@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ appointment }) => {
@@ -6,7 +6,10 @@ const CheckoutForm = ({ appointment }) => {
   const stripe = useStripe();
   const elements = useElements();
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
       // form submission until Stripe.js has loaded.
@@ -22,11 +25,11 @@ const CheckoutForm = ({ appointment }) => {
     });
 
     if (error) {
-      console.log(error);
+      setError(error.message);
     } else {
+      setError("");
       console.log(paymentMethod);
     }
-    e.preventDefault();
   };
 
   return (
@@ -52,6 +55,7 @@ const CheckoutForm = ({ appointment }) => {
           Pay ${price}
         </button>
       </form>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };
