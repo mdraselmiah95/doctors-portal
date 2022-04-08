@@ -19,7 +19,7 @@ const CheckoutForm = ({ appointment }) => {
       body: JSON.stringify({ price }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
 
   const handleSubmit = async (e) => {
