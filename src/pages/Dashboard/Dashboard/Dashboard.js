@@ -144,16 +144,6 @@ const Dashboard = (props) => {
         }}
       >
         <Toolbar />
-        {/* <Typography paragraph>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={5}>
-              <Calendar date={date} setDate={setDate}></Calendar>
-            </Grid>
-            <Grid item xs={12} sm={7}>
-              <Appointments date={date}></Appointments>
-            </Grid>
-          </Grid>
-        </Typography> */}
         <Switch>
           <Route exact path={path}>
             <DashboardHome />
