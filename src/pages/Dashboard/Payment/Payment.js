@@ -23,9 +23,11 @@ const Payment = () => {
         Please Pay for: {appointment.patientName} for {appointment.serviceName}
       </h2>
       <h4>Pay: ${appointment.price}</h4>
-      <Elements stripe={stripePromise}>
-        <CheckoutForm appointment={appointment} />
-      </Elements>
+      {appointment?.price && (
+        <Elements stripe={stripePromise}>
+          <CheckoutForm appointment={appointment} />
+        </Elements>
+      )}
     </div>
   );
 };
