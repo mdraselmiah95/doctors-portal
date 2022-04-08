@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ appointment }) => {
@@ -7,6 +7,20 @@ const CheckoutForm = ({ appointment }) => {
   const elements = useElements();
 
   const [error, setError] = useState("");
+
+  const [clientSecret, setClientSecret] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:5000/create-payment-intent", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ price }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, [price]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
