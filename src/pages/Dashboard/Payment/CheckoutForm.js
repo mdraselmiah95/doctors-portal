@@ -16,7 +16,7 @@ const CheckoutForm = ({ appointment }) => {
     if (card === null) {
       return;
     }
-    const { error, payment } = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card,
     });
