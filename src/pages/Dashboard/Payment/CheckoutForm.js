@@ -6,6 +6,15 @@ const CheckoutForm = () => {
   const elements = useElements();
 
   const handleSubmit = async (e) => {
+    if (!stripe || !elements) {
+      // Stripe.js has not loaded yet. Make sure to disable
+      // form submission until Stripe.js has loaded.
+      return;
+    }
+    const card = elements.getElement(CardElement);
+    if (card === null) {
+      return;
+    }
     e.preventDefault();
   };
 
