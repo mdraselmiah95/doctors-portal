@@ -17,7 +17,7 @@ const LogIn = () => {
   const { user, loginUser, isLoading, authError, signInWithGoogle } = useAuth();
 
   const location = useLocation();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -28,12 +28,12 @@ const LogIn = () => {
   };
 
   const handleLogInSubmit = (e) => {
-    loginUser(loginData.email, loginData.password, location, history);
+    loginUser(loginData.email, loginData.password, location, navigate);
     e.preventDefault();
   };
 
   const handleGoogleSignIn = () => {
-    signInWithGoogle(location, history);
+    signInWithGoogle(location, navigate);
   };
 
   return (
