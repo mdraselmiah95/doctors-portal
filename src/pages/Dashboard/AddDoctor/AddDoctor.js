@@ -8,10 +8,17 @@ const AddDoctor = () => {
   const [image, setImage] = useState(null);
   const [success, setSuccess] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!image) {
+      return;
+    }
+  };
+
   return (
     <div>
       <h2>Add a Doctor</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <TextField
           sx={{ width: "50%" }}
           label="Name"
@@ -25,12 +32,12 @@ const AddDoctor = () => {
           label="Email"
           type="email"
           required
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value[0])}
           variant="standard"
         />
         <br />
         <Input
-          onChange={(e) => console.log(e.target.files)}
+          onChange={(e) => setImage(e.target.files)}
           type="file"
           accept="image/*"
         />
