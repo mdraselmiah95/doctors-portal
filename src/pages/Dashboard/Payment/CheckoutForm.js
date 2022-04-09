@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import useAuth from "../../../hooks/useAuth";
 
 const CheckoutForm = ({ appointment }) => {
-  const { price } = appointment;
+  const { price, patientName } = appointment;
   const stripe = useStripe();
   const elements = useElements();
+  const { user } = useAuth();
 
   const [error, setError] = useState("");
 
@@ -43,6 +45,22 @@ const CheckoutForm = ({ appointment }) => {
     } else {
       setError("");
       console.log(paymentMethod);
+    }
+    // payment intent
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: patientName,
+            email: user.email,
+          },
+        },
+      });
+    if (intentError) {
+      setError(intentError.message);
+    } else {
+      setError("");
     }
   };
 
