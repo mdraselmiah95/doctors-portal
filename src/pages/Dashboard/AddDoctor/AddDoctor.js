@@ -29,7 +29,11 @@ const AddDoctor = () => {
           variant="standard"
         />
         <br />
-        <Input type="file" accept="image/*" />
+        <Input
+          onChange={(e) => console.log(e.target.files)}
+          type="file"
+          accept="image/*"
+        />
         <br />
         <Button variant="contained" type="submit">
           Add Doctor
