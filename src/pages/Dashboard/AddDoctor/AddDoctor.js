@@ -24,7 +24,9 @@ const AddDoctor = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Success:", data);
+        if (data.insertedId) {
+          console.log("Doctor added successfully.");
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -48,14 +50,14 @@ const AddDoctor = () => {
           label="Email"
           type="email"
           required
-          onChange={(e) => setEmail(e.target.value[0])}
+          onChange={(e) => setEmail(e.target.value)}
           variant="standard"
         />
         <br />
         <Input
-          onChange={(e) => setImage(e.target.files)}
-          type="file"
           accept="image/*"
+          type="file"
+          onChange={(e) => setImage(e.target.files[0])}
         />
         <br />
         <Button variant="contained" type="submit">
