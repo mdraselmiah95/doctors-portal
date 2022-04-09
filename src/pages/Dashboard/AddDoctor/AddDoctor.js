@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Button, Input, TextField } from "@mui/material";
 
 import React from "react";
 
@@ -21,6 +21,12 @@ const AddDoctor = () => {
           required
           variant="standard"
         />
+        <br />
+        <Input type="file" accept="image/*" />
+        <br />
+        <Button variant="contained" type="submit">
+          Add Doctor
+        </Button>
       </form>
     </div>
   );
