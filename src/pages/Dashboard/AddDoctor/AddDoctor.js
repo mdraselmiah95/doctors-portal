@@ -5,6 +5,8 @@ import React, { useState } from "react";
 const AddDoctor = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [image, setImage] = useState(null);
+  const [success, setSuccess] = useState(false);
 
   return (
     <div>
