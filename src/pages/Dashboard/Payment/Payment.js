@@ -13,7 +13,9 @@ const Payment = () => {
   const [appointment, setAppointment] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/appointments/${appointmentId}`)
+    fetch(
+      `https://glacial-wave-71858.herokuapp.com/appointments/${appointmentId}`
+    )
       .then((res) => res.json())
       .then((data) => setAppointment(data));
   }, [appointmentId]);
