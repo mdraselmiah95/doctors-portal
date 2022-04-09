@@ -64,7 +64,7 @@ const AddDoctor = () => {
           Add Doctor
         </Button>
       </form>
-      {success && { success }}
+      {success && <p style={{ color: "green" }}>{success}</p>}
     </div>
   );
 };
