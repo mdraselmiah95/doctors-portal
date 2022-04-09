@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Appointment from "./pages/Appointment/Appointment/Appointment";
@@ -13,31 +13,29 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <PrivateRoute path="/appointment">
-              <Appointment />
-            </PrivateRoute>
-            <PrivateRoute path="/dashboard">
-              <Dashboard />
-            </PrivateRoute>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/login">
-              <LogIn />
-            </Route>
-            <Route path="/register">
-              <Register />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-        </Router>
+        <Routes>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <PrivateRoute path="/appointment">
+            <Appointment />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <LogIn />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Routes>
       </AuthProvider>
     </div>
   );

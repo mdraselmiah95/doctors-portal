@@ -17,7 +17,14 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 // import { Link } from "react-router-dom";
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import {
+  Link,
+  Switch,
+  useRouteMatch,
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import AdminRoute from "../../LogIn/AdminRoute/AdminRoute";
 import AddDoctor from "../AddDoctor/AddDoctor";
@@ -144,7 +151,7 @@ const Dashboard = (props) => {
         }}
       >
         <Toolbar />
-        <Switch>
+        <Routes>
           <Route exact path={path}>
             <DashboardHome />
           </Route>
@@ -157,7 +164,7 @@ const Dashboard = (props) => {
           <AdminRoute path={`${path}/addDoctor`}>
             <AddDoctor />
           </AdminRoute>
-        </Switch>
+        </Routes>
       </Box>
     </Box>
   );

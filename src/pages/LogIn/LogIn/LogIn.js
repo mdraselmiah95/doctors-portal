@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { NavLink, useHistory, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import login from "../../../images/login.png";
 
@@ -17,7 +17,7 @@ const LogIn = () => {
   const { user, loginUser, isLoading, authError, signInWithGoogle } = useAuth();
 
   const location = useLocation();
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleOnChange = (e) => {
     const field = e.target.name;
