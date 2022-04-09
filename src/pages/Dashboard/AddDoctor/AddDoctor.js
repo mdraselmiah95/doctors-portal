@@ -1,8 +1,11 @@
 import { Button, Input, TextField } from "@mui/material";
 
-import React from "react";
+import React, { useState } from "react";
 
 const AddDoctor = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   return (
     <div>
       <h2>Add a Doctor</h2>
@@ -11,6 +14,7 @@ const AddDoctor = () => {
           sx={{ width: "50%" }}
           label="Name"
           required
+          onChange={(e) => setName(e.target.value)}
           variant="standard"
         />
         <br />
@@ -19,6 +23,7 @@ const AddDoctor = () => {
           label="Email"
           type="email"
           required
+          onChange={(e) => setEmail(e.target.value)}
           variant="standard"
         />
         <br />
