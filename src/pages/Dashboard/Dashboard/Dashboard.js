@@ -45,7 +45,6 @@ const Dashboard = (props) => {
       <Link to="/dashboard">
         <Button color="inherit">Dashboard</Button>
       </Link>
-
       {admin && (
         <Box>
           <Link to={`/dashboard/makeAdmin`}>
@@ -56,7 +55,6 @@ const Dashboard = (props) => {
           </Link>
         </Box>
       )}
-
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
