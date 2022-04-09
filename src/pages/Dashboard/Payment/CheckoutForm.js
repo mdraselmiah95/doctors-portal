@@ -4,7 +4,7 @@ import useAuth from "../../../hooks/useAuth";
 import { CircularProgress } from "@mui/material";
 
 const CheckoutForm = ({ appointment }) => {
-  const { price, patientName } = appointment;
+  const { price, patientName, _id } = appointment;
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useAuth();
@@ -67,8 +67,25 @@ const CheckoutForm = ({ appointment }) => {
     } else {
       setError("");
       setSuccess("Your payment processed successfully.");
-      console.log(paymentIntent);
+      //   console.log(paymentIntent);
       setProcessing(false);
+      //save to database
+      const payment = {
+        amount: paymentIntent.amount,
+        created: paymentIntent.created,
+        last4: paymentMethod.card.last4,
+        transaction: paymentIntent.client_secret.slice("_secret")[0],
+      };
+      const url = `http://localhost:5000/appointments/${_id}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payment),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
     }
   };
 
