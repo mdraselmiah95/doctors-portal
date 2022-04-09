@@ -17,14 +17,7 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 // import { Link } from "react-router-dom";
-import {
-  Link,
-  Switch,
-  useRouteMatch,
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import AdminRoute from "../../LogIn/AdminRoute/AdminRoute";
 import AddDoctor from "../AddDoctor/AddDoctor";
@@ -37,7 +30,6 @@ const drawerWidth = 200;
 const Dashboard = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  let { path, url } = useRouteMatch();
   const { admin } = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -50,7 +42,7 @@ const Dashboard = (props) => {
       <Link to="/appointment">
         <Button color="inherit">Appointment</Button>
       </Link>
-      <Link to={`${url}`}>
+      <Link to="/dashboard">
         <Button color="inherit">Dashboard</Button>
       </Link>
 

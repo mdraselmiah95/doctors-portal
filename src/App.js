@@ -13,29 +13,31 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Routes>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <PrivateRoute path="/appointment">
-            <Appointment />
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard">
-            <Dashboard />
-          </PrivateRoute>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <LogIn />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Routes>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/appointment"
+              element={
+                <PrivateRoute>
+                  <Appointment />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
       </AuthProvider>
     </div>
   );
