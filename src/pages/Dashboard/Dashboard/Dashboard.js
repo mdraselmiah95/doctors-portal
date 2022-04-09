@@ -19,11 +19,6 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import AdminRoute from "../../LogIn/AdminRoute/AdminRoute";
-import AddDoctor from "../AddDoctor/AddDoctor";
-import DashboardHome from "../DashboardHome/DashboardHome";
-import MakeAdmin from "../MakeAdmin/MakeAdmin";
-import Payment from "../Payment/Payment";
 
 const drawerWidth = 200;
 

@@ -40,17 +40,17 @@ function App() {
               <Route
                 exact
                 path="/dashboard"
-                element={<DashboardHome></DashboardHome>}
+                element={<DashboardHome />}
               ></Route>
               <Route
                 path={`/dashboard/payment/:appointmentId`}
-                element={<Payment></Payment>}
+                element={<Payment />}
               ></Route>
               <Route
                 path={`/dashboard/makeAdmin`}
                 element={
                   <AdminRoute>
-                    <MakeAdmin></MakeAdmin>
+                    <MakeAdmin />
                   </AdminRoute>
                 }
               ></Route>
