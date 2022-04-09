@@ -29,8 +29,6 @@ const CheckoutForm = ({ appointment }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) {
-      // Stripe.js has not loaded yet. Make sure to disable
-      // form submission until Stripe.js has loaded.
       return;
     }
     const card = elements.getElement(CardElement);
@@ -50,6 +48,7 @@ const CheckoutForm = ({ appointment }) => {
       setError("");
       console.log(paymentMethod);
     }
+
     // payment intent
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clientSecret, {
@@ -61,15 +60,16 @@ const CheckoutForm = ({ appointment }) => {
           },
         },
       });
+
     if (intentError) {
       setError(intentError.message);
       setSuccess("");
     } else {
       setError("");
       setSuccess("Your payment processed successfully.");
-      //   console.log(paymentIntent);
+      console.log(paymentIntent);
       setProcessing(false);
-      //save to database
+      // save to database
       const payment = {
         amount: paymentIntent.amount,
         created: paymentIntent.created,
