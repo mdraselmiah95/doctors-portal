@@ -9,7 +9,7 @@ const CheckoutForm = ({ appointment }) => {
   const { user } = useAuth();
 
   const [error, setError] = useState("");
-
+  const [success, setSuccess] = useState("");
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
@@ -42,6 +42,7 @@ const CheckoutForm = ({ appointment }) => {
 
     if (error) {
       setError(error.message);
+      setSuccess("");
     } else {
       setError("");
       console.log(paymentMethod);
@@ -59,8 +60,11 @@ const CheckoutForm = ({ appointment }) => {
       });
     if (intentError) {
       setError(intentError.message);
+      setSuccess("");
     } else {
       setError("");
+      setSuccess("Your payment processed successfully.");
+      console.log(paymentIntent);
     }
   };
 
@@ -88,6 +92,7 @@ const CheckoutForm = ({ appointment }) => {
         </button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && <p style={{ color: "green" }}>{success}</p>}
     </div>
   );
 };
