@@ -17,6 +17,18 @@ const AddDoctor = () => {
     formData.append("name", name);
     formData.append("email", email);
     formData.append("image", image);
+
+    fetch("", {
+      method: "POST", // or 'PUT'
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
