@@ -25,7 +25,7 @@ const AddDoctor = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          console.log("Doctor added successfully.");
+          setSuccess("Doctor added successfully.");
         }
       })
       .catch((error) => {
@@ -64,6 +64,7 @@ const AddDoctor = () => {
           Add Doctor
         </Button>
       </form>
+      {success && { success }}
     </div>
   );
 };
