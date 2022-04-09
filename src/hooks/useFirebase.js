@@ -24,7 +24,7 @@ const useFirebase = () => {
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
-  const registerUser = (email, password, name, history) => {
+  const registerUser = (email, password, name, navigate) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -40,7 +40,7 @@ const useFirebase = () => {
           .then(() => {})
           .catch((error) => {});
 
-        history.replace("/");
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -65,14 +65,14 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-  const signInWithGoogle = (location, history) => {
+  const signInWithGoogle = (location, navigate) => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
         saveUser(user.email, user.displayName, "PUT");
         const destination = location?.state?.from || "/";
-        history.replace(destination);
+        navigate(destination);
         setAuthError("");
       })
       .catch((error) => {
