@@ -48,10 +48,10 @@ const Dashboard = (props) => {
 
       {admin && (
         <Box>
-          <Link to={`${url}/makeAdmin`}>
+          <Link to={`/dashboard/makeAdmin`}>
             <Button color="inherit">Make Admin</Button>
           </Link>
-          <Link to={`${url}/addDoctor`}>
+          <Link to={`/dashboard/addDoctor`}>
             <Button color="inherit">Add Doctor</Button>
           </Link>
         </Box>
@@ -143,20 +143,7 @@ const Dashboard = (props) => {
         }}
       >
         <Toolbar />
-        <Routes>
-          <Route exact path={path}>
-            <DashboardHome />
-          </Route>
-          <AdminRoute path={`${path}/payment/:appointmentId`}>
-            <Payment />
-          </AdminRoute>
-          <AdminRoute path={`${path}/makeAdmin`}>
-            <MakeAdmin />
-          </AdminRoute>
-          <AdminRoute path={`${path}/addDoctor`}>
-            <AddDoctor />
-          </AdminRoute>
-        </Routes>
+        <Outlet></Outlet>
       </Box>
     </Box>
   );
