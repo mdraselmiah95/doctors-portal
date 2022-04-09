@@ -18,11 +18,11 @@ const AddDoctor = () => {
     formData.append("email", email);
     formData.append("image", image);
 
-    fetch("", {
+    fetch("http://localhost:5000/doctors", {
       method: "POST", // or 'PUT'
       body: formData,
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         console.log("Success:", data);
       })
