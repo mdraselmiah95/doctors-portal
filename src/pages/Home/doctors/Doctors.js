@@ -3,7 +3,7 @@ import { Container, Grid } from "@mui/material";
 import Doctor from "../doctor/Doctor";
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
-
+  //heroku server
   useEffect(() => {
     fetch("https://glacial-wave-71858.herokuapp.com/doctors")
       .then((res) => res.json())
