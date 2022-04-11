@@ -29,6 +29,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+            {/* private route */}
             <Route
               path="/dashboard"
               element={
