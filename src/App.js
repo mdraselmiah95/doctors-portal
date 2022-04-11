@@ -13,7 +13,7 @@ import LogIn from "./pages/LogIn/LogIn/LogIn";
 import PrivateRoute from "./pages/LogIn/PrivateRoute/PrivateRoute";
 import Register from "./pages/LogIn/Register/Register";
 import NotFound from "./pages/NotFound/NotFound";
-
+//changing react router dom version
 function App() {
   return (
     <div className="App">
