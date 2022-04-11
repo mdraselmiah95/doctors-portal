@@ -29,7 +29,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-            {/* private route */}
+            {/* private route  and also nested route*/}
             <Route
               path="/dashboard"
               element={
