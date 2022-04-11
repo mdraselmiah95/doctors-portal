@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import bg from "../../../images/bg.png";
 import chair from "../../../images/chair.png";
+import MuiButton from "../../../styledComponent/MuiButton";
 const bannerBg = {
   background: `url(${bg})`,
 };
@@ -35,9 +36,7 @@ const Banner = () => {
               How do you differentiate yourself in ultra-competitive Bay Area
               dentistry? You start by assembling a world.
             </Typography>
-            <Button variant="contained" style={{ backgroundColor: "#5CE7ED" }}>
-              Get Appointment
-            </Button>
+            <MuiButton>Get Appointment</MuiButton>
           </Box>
         </Grid>
         <Grid item xs={12} md={6} style={verticalCenter}>
