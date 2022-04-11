@@ -136,6 +136,7 @@ const Dashboard = (props) => {
         }}
       >
         <Toolbar />
+        {/* nested route by new react router dom */}
         <Outlet></Outlet>
       </Box>
     </Box>
