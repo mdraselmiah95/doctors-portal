@@ -16,7 +16,7 @@ import NotFound from "./pages/NotFound/NotFound";
 //changing react router dom version and also react version
 function App() {
   return (
-    <div className="App">
+    <div>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
