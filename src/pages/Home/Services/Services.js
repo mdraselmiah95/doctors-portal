@@ -30,10 +30,14 @@ const services = [
 
 const Services = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, marginTop: 10, textAlign: "center" }}>
       <Container>
         <Typography
-          sx={{ fontWeight: 500, m: 2, color: "info.main" }}
+          sx={{
+            fontWeight: 500,
+            m: 2,
+            color: "info.main",
+          }}
           variant="h5"
           component="div"
         >
