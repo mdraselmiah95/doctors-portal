@@ -36,14 +36,18 @@ const Services = () => {
           sx={{
             fontWeight: 500,
             m: 2,
-            color: "info.main",
+            color: "#5BC6C6",
           }}
           variant="h5"
           component="div"
         >
           OUR SERVICES
         </Typography>
-        <Typography sx={{ fontWeight: 600, m: 3 }} variant="h4" component="div">
+        <Typography
+          sx={{ fontWeight: 600, m: 3, marginBottom: 10 }}
+          variant="h4"
+          component="div"
+        >
           Services We Provide
         </Typography>
         <Grid
