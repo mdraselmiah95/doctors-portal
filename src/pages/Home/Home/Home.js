@@ -1,5 +1,6 @@
 import React from "react";
 import Navigation from "../../Shared/Navigation/Navigation";
+import Appointment from "../appointment/Appointment";
 import AppointmentBanner from "../AppointmentBanner/AppointmentBanner";
 import Banner from "../Banner/Banner";
 import Doctors from "../doctors/Doctors";
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner />
       <InfoCard />
       <Services />
+      <Appointment />
       <AppointmentBanner />
       <Doctors />
     </div>
