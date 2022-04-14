@@ -6,6 +6,7 @@ import Banner from "../Banner/Banner";
 import Blogs from "../blogs/Blogs";
 import Contact from "../contact/Contact";
 import Doctors from "../doctors/Doctors";
+import Footer from "../footer/Footer";
 import InfoCard from "../InfoCard/InfoCard";
 import OurDoctors from "../ourDoctors/OurDoctors";
 import Services from "../Services/Services";
@@ -23,6 +24,7 @@ const Home = () => {
       <OurDoctors />
       <Doctors />
       <Contact />
+      <Footer />
     </div>
   );
 };
