@@ -1,8 +1,8 @@
 import { Container, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-
-import bg from "../../../images/appointmentbg.png";
+import bg from "../../../images/appointment-bg.png";
+import MuiButton from "../../../styledComponent/MuiButton";
 
 const Contact = () => {
   const useStyle = makeStyles({
@@ -26,8 +26,35 @@ const Contact = () => {
   });
   const { root, textArea } = useStyle();
   return (
-    <div>
-      <h1>f</h1>
+    <div className={root}>
+      <Container maxWidth="md">
+        <Typography variant="h6" color="#19D3AE">
+          Contact us
+        </Typography>
+        <Typography variant="h4" color="#fff">
+          Always connect with us
+        </Typography>
+        <TextField
+          fullWidth
+          placeholder="Email"
+          margin="normal"
+          required
+          sx={{ backgroundColor: "#fff", borderRadius: 1 }}
+        />
+        <TextField
+          fullWidth
+          placeholder="Subject"
+          margin="normal"
+          required
+          sx={{ backgroundColor: "#fff", borderRadius: 1 }}
+        />
+        <textarea
+          rows={10}
+          className={textArea}
+          placeholder="Your Message"
+        ></textarea>
+        <MuiButton variant="contained">Submit</MuiButton>
+      </Container>
     </div>
   );
 };
