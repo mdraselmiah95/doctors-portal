@@ -14,8 +14,8 @@ const Home = () => {
       <Banner />
       <InfoCard />
       <Services />
-      <Appointment />
       <About />
+      <Appointment />
       <Doctors />
     </div>
   );
