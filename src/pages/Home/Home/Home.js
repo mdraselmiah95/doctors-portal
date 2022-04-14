@@ -4,6 +4,7 @@ import About from "../about/About";
 import Appointment from "../appointment/Appointment";
 import Banner from "../Banner/Banner";
 import Blogs from "../blogs/Blogs";
+import Contact from "../contact/Contact";
 import Doctors from "../doctors/Doctors";
 import InfoCard from "../InfoCard/InfoCard";
 import OurDoctors from "../ourDoctors/OurDoctors";
@@ -21,6 +22,7 @@ const Home = () => {
       <Blogs />
       <OurDoctors />
       <Doctors />
+      <Contact />
     </div>
   );
 };
