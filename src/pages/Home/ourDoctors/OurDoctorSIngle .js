@@ -1,4 +1,6 @@
+import { Grid, Paper, Typography } from "@mui/material";
 import React from "react";
+import CallIcon from "@mui/icons-material/Call";
 
 const OurDoctorSIngle = ({ item }) => {
   const { name, phone, image } = item;
