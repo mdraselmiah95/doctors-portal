@@ -6,6 +6,7 @@ import Banner from "../Banner/Banner";
 import Blogs from "../blogs/Blogs";
 import Doctors from "../doctors/Doctors";
 import InfoCard from "../InfoCard/InfoCard";
+import OurDoctors from "../ourDoctors/OurDoctors";
 import Services from "../Services/Services";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <About />
       <Appointment />
       <Blogs />
+      <OurDoctors />
       <Doctors />
     </div>
   );
