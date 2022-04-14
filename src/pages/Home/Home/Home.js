@@ -3,6 +3,7 @@ import Navigation from "../../Shared/Navigation/Navigation";
 import About from "../about/About";
 import Appointment from "../appointment/Appointment";
 import Banner from "../Banner/Banner";
+import Blogs from "../blogs/Blogs";
 import Doctors from "../doctors/Doctors";
 import InfoCard from "../InfoCard/InfoCard";
 import Services from "../Services/Services";
@@ -16,6 +17,7 @@ const Home = () => {
       <Services />
       <About />
       <Appointment />
+      <Blogs />
       <Doctors />
     </div>
   );
