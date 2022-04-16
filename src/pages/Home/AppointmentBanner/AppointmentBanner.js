@@ -5,6 +5,7 @@ import React from "react";
 import bg from "../../../images/appointment-bg.png";
 import doctor from "../../../images/doctor.png";
 
+//Background banner creating Dynamically
 const appointmentBanner = {
   background: `url(${bg})`,
   backgroundColor: "rgba(45, 58, 74, 0.9)",
