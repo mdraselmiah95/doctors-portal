@@ -39,6 +39,8 @@ const Banner = () => {
               How do you differentiate yourself in ultra-competitive Bay Area
               dentistry? You start by assembling a world.
             </Typography>
+
+            {/* use Styled components here a Button  */}
             <MuiButton>Get Appointment</MuiButton>
           </Grid>
           <Grid item xs={12} md={6} style={verticalCenter}>
