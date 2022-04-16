@@ -10,6 +10,7 @@ const verticalCenter = {
   height: 400,
 };
 
+//setup Background
 const style = {
   minHeight: 500,
   height: "100vh",
