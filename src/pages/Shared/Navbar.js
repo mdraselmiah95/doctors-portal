@@ -47,14 +47,14 @@ const Navbar = () => {
             </label>
             <ul
               tabindex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-medium text-base text-black"
             >
               {menuItems}
             </ul>
           </div>
 
           <Link to="/">
-            <h3 className="btn btn-ghost normal-case text-xl">
+            <h3 className="btn btn-ghost normal-case font-semibold text-lg">
               Doctors Portal
             </h3>
           </Link>
