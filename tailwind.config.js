@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        textOne: "#3A4256",
+      },
+      lineHeight: {
+        extra: "4.063rem",
+      },
+    },
   },
   daisyui: {
     themes: [
