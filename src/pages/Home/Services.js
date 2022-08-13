@@ -30,7 +30,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="px-12 my-28">
+    <div className=" my-28">
       <div className="mb-16 text-center">
         <h3 className="mb-2 text-xl font-bold uppercase text-primary">
           Our Services
