@@ -4,8 +4,8 @@ import PrimaryButton from "../Shared/PrimaryButton";
 
 const Banner = () => {
   return (
-    <div className="min-h-screen hero">
-      <div className="flex-col hero-content lg:flex-row-reverse">
+    <div className="min-h-screen hero bg-[url('/src/assets/images/bg.png')]">
+      <div className="flex-col hero-content lg:flex-row-reverse ">
         <img
           src={chair}
           className="rounded-lg shadow-2xl "

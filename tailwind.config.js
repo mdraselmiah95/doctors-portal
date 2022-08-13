@@ -9,6 +9,9 @@ module.exports = {
       lineHeight: {
         extra: "4.063rem",
       },
+      backgroundImage: {
+        "hero-bg": "url('/src/assets/images/bg.png')",
+      },
     },
   },
   daisyui: {
