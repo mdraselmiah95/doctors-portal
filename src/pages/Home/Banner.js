@@ -8,9 +8,9 @@ const Banner = () => {
       <div className="flex-col hero-content lg:flex-row-reverse ">
         <img
           src={chair}
-          className="rounded-lg shadow-2xl "
+          className="rounded-lg shadow-2xl lg:h-[22.188rem] lg:w-[37.125rem]"
           alt="chair"
-          style={{ width: "594px", height: "355px" }}
+          // style={{ width: "594px", height: "355px" }}
         />
         <div>
           <h1 className="text-5xl font-bold text-textOne leading-extra">
