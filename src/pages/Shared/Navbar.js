@@ -54,7 +54,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/">
-            <h3 className="btn btn-ghost normal-case font-semibold lg:text-lg">
+            <h3 className="btn btn-ghost normal-case font-bold lg:text-lg">
               Doctors Portal
             </h3>
           </Link>
