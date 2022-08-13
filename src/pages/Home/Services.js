@@ -1,4 +1,5 @@
 import React from "react";
+import Service from "./Service";
 
 //images
 import fluoride from "../../assets/images/fluoride.png";
@@ -27,7 +28,7 @@ const Services = () => {
     },
   ];
   return (
-    <div className="my-28">
+    <div className="px-12 my-28">
       <div className="text-center">
         <h3 className="text-xl font-bold uppercase text-primary">
           Our Services
@@ -35,9 +36,9 @@ const Services = () => {
         <h2 className="text-4xl">Services We Provide</h2>
       </div>
       <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {/* {services.map((service) => (
-              <Service key={service._id} service={service}></Service>
-            ))} */}
+        {services.map((service) => (
+          <Service key={service._id} service={service}></Service>
+        ))}
       </div>
     </div>
   );
