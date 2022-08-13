@@ -7,6 +7,7 @@ import cavity from "../../assets/images/cavity.png";
 import whitening from "../../assets/images/whitening.png";
 
 const Services = () => {
+  // Dome service data
   const services = [
     {
       _id: 1,
@@ -27,10 +28,11 @@ const Services = () => {
       img: whitening,
     },
   ];
+
   return (
     <div className="px-12 my-28">
-      <div className="text-center">
-        <h3 className="text-xl font-bold uppercase text-primary">
+      <div className="mb-16 text-center">
+        <h3 className="mb-2 text-xl font-bold uppercase text-primary">
           Our Services
         </h3>
         <h2 className="text-4xl">Services We Provide</h2>

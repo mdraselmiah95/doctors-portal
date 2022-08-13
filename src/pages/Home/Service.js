@@ -2,7 +2,7 @@ import React from "react";
 
 const Service = ({ service }) => {
   return (
-    <div className="shadow-xl card lg:max-w-lg bg-base-100">
+    <div className="transition shadow-xl cursor-pointer card lg:max-w-lg bg-base-100 hover:-translate-y-3">
       <figure className="px-10 pt-10">
         <img src={service.img} alt="Shoes" className="rounded-xl" />
       </figure>
