@@ -4,17 +4,17 @@ import PrimaryButton from "../Shared/PrimaryButton";
 
 const Treatment = () => {
   return (
-    <div className="flex justify-center items-center py-36 pl-56 pr-40">
+    <div className="md:flex justify-center items-center lg:py-36 lg:pl-40 lg:pr-20 py-16 px-2">
       <img
         src={treatment}
         alt="treatment"
-        className=" w-[28.625rem] h-[36rem]"
+        className=" md:w-[28.625rem] md:h-[36rem] rounded-lg md:mr-24 mr-8"
       />
-      <div className=" p-24">
-        <h2 className="text-5xl font-bold text-textOne leading-extra">
+      <div className="">
+        <h2 className="md:text-5xl text-3xl font-bold text-textOne md:leading-extra">
           Exceptional Dental Care, on Your Terms
         </h2>
-        <p className="py-6 text-base text-textOne">
+        <p className="md:pt-6 md:pb-11 py-4 text-base text-textOne">
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using that it has a more-or-less normal distribution of letters,as
