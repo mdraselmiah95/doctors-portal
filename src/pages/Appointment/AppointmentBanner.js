@@ -5,7 +5,7 @@ import "react-day-picker/dist/style.css";
 import chair from "../../assets/images/chair.png";
 import bg from "../../assets/images/bg.png";
 
-const AppointmentBanner = () => {
+const AppointmentBanner = ({ date, setDate }) => {
   return (
     <div
       style={{
@@ -21,7 +21,15 @@ const AppointmentBanner = () => {
           alt="Dentist Chair"
         />
         <div>
-          <DayPicker mode="single" />
+          <DayPicker
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            modifiersClassNames={{
+              selected: "my-selected",
+              today: "my-today",
+            }}
+          />
         </div>
       </div>
     </div>
