@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../Shared/Footer";
 import AppointmentBanner from "./AppointmentBanner";
 
 const Appointment = () => {
+  const [date, setDate] = useState(new Date());
   return (
     <div>
-      <AppointmentBanner />
+      <AppointmentBanner date={date} setDate={setDate} />
       <Footer />
     </div>
   );
