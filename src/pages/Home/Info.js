@@ -16,7 +16,8 @@ const Info = () => {
       ></InfoCard>
       <InfoCard
         cardTitle="Our Locations"
-        bgClass="bg-[#3A4256]"
+        bgClass="bg-neutral"
+        // bgClass="bg-[#3d4451]"
         img={marker}
       ></InfoCard>
       <InfoCard
@@ -29,10 +30,3 @@ const Info = () => {
 };
 
 export default Info;
-/*
-export default Info;
-export default Info;
-export default Info;
-export default Info;
-export default Info;
-*/
