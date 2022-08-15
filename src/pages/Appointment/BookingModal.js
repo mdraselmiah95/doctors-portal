@@ -8,7 +8,8 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
   const handleBooking = (e) => {
     e.preventDefault();
     const slot = e.target.slot.value;
-    console.log(slot);
+    console.log(_id, name, slot);
+    setTreatment(null);
   };
   return (
     <div>
