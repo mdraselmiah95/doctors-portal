@@ -108,6 +108,7 @@ const Login = () => {
             </small>
           </p>
           <div className="divider">OR</div>
+          {/* button for Google signIn */}
           <button
             onClick={() => signInWithGoogle()}
             className="btn btn-outline"
