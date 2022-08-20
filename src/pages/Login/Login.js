@@ -7,6 +7,8 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import Loading from "../Shared/Loading";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -15,11 +17,26 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
-  console.log(gUser);
+  let signInError;
+
+  if (loading || gLoading) {
+    return <Loading />;
+  }
+
+  if (error || gError) {
+    signInError = (
+      <p className="text-red-500">
+        <small>{error?.message || gError?.message}</small>
+      </p>
+    );
+  }
 
   const onSubmit = (data) => {
     console.log(data);
+    signInWithEmailAndPassword(data.email, data.password);
   };
   return (
     <div className="flex items-center justify-center h-screen">
@@ -92,7 +109,7 @@ const Login = () => {
               </label>
             </div>
 
-            {/* {signInError} */}
+            {signInError}
             <input
               className="w-full max-w-xs text-white btn"
               type="submit"
