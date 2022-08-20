@@ -11,7 +11,7 @@ const Footer = () => {
       }}
       className=""
     >
-      <div className="footer  md:py-16 md:px-24 p-6">
+      <div className="p-6 footer md:py-16 md:px-24">
         <div>
           <span className="footer-title">Services</span>
           <Link to="/" className="link link-hover">
@@ -55,7 +55,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className=" mb-11 text-center">
+      <div className="text-center  mb-11">
         <p>Copyright © 2022 - All right reserved</p>
       </div>
     </footer>
