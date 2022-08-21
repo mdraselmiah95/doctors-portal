@@ -7,7 +7,6 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import Loading from "../Shared/Loading";
 
 const Login = () => {
