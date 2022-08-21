@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import {
@@ -21,6 +21,9 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
 
   let signInError;
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   if (loading || gLoading) {
     return <Loading />;
@@ -32,6 +35,10 @@ const Login = () => {
         <small>{error?.message || gError?.message}</small>
       </p>
     );
+  }
+
+  if (error || gUser) {
+    navigate(from, { replace: true });
   }
 
   const onSubmit = (data) => {
