@@ -22,6 +22,7 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   let signInError;
+  const navigate = useNavigate();
 
   if (loading || gLoading || updating) {
     return <Loading />;
@@ -37,9 +38,10 @@ const SignUp = () => {
     );
   }
 
-  const onSubmit = (data) => {
-    console.log(data);
-    createUserWithEmailAndPassword(data.email, data.password);
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    navigate("/appointment");
   };
   return (
     <div className="flex items-center justify-center h-screen">
