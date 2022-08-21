@@ -37,8 +37,9 @@ const SignUp = () => {
     );
   }
 
-  const onSubmit = () => {
-    console.log();
+  const onSubmit = (data) => {
+    console.log(data);
+    createUserWithEmailAndPassword(data.email, data.password);
   };
   return (
     <div className="flex items-center justify-center h-screen">
