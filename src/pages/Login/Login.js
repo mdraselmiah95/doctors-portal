@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
@@ -24,6 +24,12 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
+  useEffect(() => {
+    if (error || gUser) {
+      navigate(from, { replace: true });
+    }
+  }, [user, gUser, from, navigate, error]);
+
   if (loading || gLoading) {
     return <Loading />;
   }
@@ -34,10 +40,6 @@ const Login = () => {
         <small>{error?.message || gError?.message}</small>
       </p>
     );
-  }
-
-  if (error || gUser) {
-    navigate(from, { replace: true });
   }
 
   const onSubmit = (data) => {
