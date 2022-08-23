@@ -1,8 +1,11 @@
 import React from "react";
 import { format } from "date-fns";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const BookingModal = ({ date, treatment, setTreatment }) => {
   const { _id, name, slots, price } = treatment;
+  const [user, loading, error] = useAuthState(auth);
   const formattedDate = format(date, "PP");
 
   const handleBooking = (e) => {
@@ -18,26 +21,26 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
         <div className="modal-box">
           <label
             htmlFor="booking-modal"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
+            className="absolute btn btn-sm btn-circle right-2 top-2"
           >
             ✕
           </label>
-          <h3 className="font-bold text-lg text-secondary mb-11 text-center">
+          <h3 className="text-lg font-bold text-center text-secondary mb-11">
             Booking for: {name}
           </h3>
           <form
             onSubmit={handleBooking}
-            className="grid grid-cols-1 gap-3 justify-items-center mt-2"
+            className="grid grid-cols-1 gap-3 mt-2 justify-items-center"
           >
             <input
               type="text"
               disabled
               value={format(date, "PP")}
-              className="input input-bordered w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered"
             />
             <select
               name="slot"
-              className="select select-bordered w-full max-w-xs"
+              className="w-full max-w-xs select select-bordered"
             >
               {slots.map((slot, index) => (
                 <option key={index} value={slot}>
@@ -48,25 +51,27 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
             <input
               type="text"
               name="name"
-              //   value={user?.displayName || ""}
-              className="input input-bordered w-full max-w-xs"
+              value={user?.displayName || ""}
+              disabled
+              className="w-full max-w-xs input input-bordered"
             />
             <input
               type="email"
               name="email"
-              //   value={user?.email || ""}
-              className="input input-bordered w-full max-w-xs"
+              value={user?.email || ""}
+              disabled
+              className="w-full max-w-xs input input-bordered"
             />
             <input
               type="number"
               name="phone"
               placeholder="Phone Number"
-              className="input input-bordered w-full max-w-xs"
+              className="w-full max-w-xs input input-bordered"
             />
             <input
               type="submit"
               value="Submit"
-              className="btn btn-secondary w-full max-w-xs"
+              className="w-full max-w-xs btn btn-secondary"
             />
           </form>
         </div>
