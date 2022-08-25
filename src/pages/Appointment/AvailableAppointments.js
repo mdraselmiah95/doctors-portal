@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { format } from "date-fns";
 import Service from "./Service";
@@ -6,14 +6,6 @@ import BookingModal from "./BookingModal";
 import Loading from "../Shared/Loading";
 
 const AvailableAppointments = ({ date }) => {
-  // const [services, setServices] = useState([]);
-  //fetching data from local server normal system
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/available?date=${formattedDate}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setServices(data));
-  // }, [formattedDate]);
-
   const [treatment, setTreatment] = useState(null);
 
   const formattedDate = format(date, "PP");
@@ -23,9 +15,9 @@ const AvailableAppointments = ({ date }) => {
     isLoading,
     refetch,
   } = useQuery(["available", formattedDate], () =>
-    fetch(
-      `https://secret-dusk-46242.herokuapp.com/available?date=${formattedDate}`
-    ).then((res) => res.json())
+    fetch(`http://localhost:5000/available?date=${formattedDate}`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -38,7 +30,7 @@ const AvailableAppointments = ({ date }) => {
         Available Appointments on: {format(date, "PP")}
       </h4>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
+        {services?.map((service) => (
           <Service
             key={service._id}
             service={service}
@@ -49,6 +41,7 @@ const AvailableAppointments = ({ date }) => {
       {treatment && (
         <BookingModal
           date={date}
+          refetch={refetch}
           treatment={treatment}
           setTreatment={setTreatment}
         />
@@ -58,3 +51,14 @@ const AvailableAppointments = ({ date }) => {
 };
 
 export default AvailableAppointments;
+
+/**
+ * 
+ * const [services, setServices] = useState([]);
+  //fetching data from local server normal system
+  useEffect(() => {
+    fetch(`http://localhost:5000/available?date=${formattedDate}`)
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, [formattedDate]);
+*/
