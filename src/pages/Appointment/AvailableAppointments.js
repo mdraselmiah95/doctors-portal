@@ -1,19 +1,36 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import { format } from "date-fns";
 import Service from "./Service";
 import BookingModal from "./BookingModal";
+import Loading from "../Shared/Loading";
 
 const AvailableAppointments = ({ date }) => {
-  const [services, setServices] = useState([]);
+  // const [services, setServices] = useState([]);
+  //fetching data from local server normal system
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/available?date=${formattedDate}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setServices(data));
+  // }, [formattedDate]);
+
   const [treatment, setTreatment] = useState(null);
 
   const formattedDate = format(date, "PP");
-  //fetching data from local server
-  useEffect(() => {
-    fetch(`http://localhost:5000/available?date=${formattedDate}`)
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, []);
+  // Fetching data using React Query
+  const {
+    data: services,
+    isLoading,
+    refetch,
+  } = useQuery(["available", formattedDate], () =>
+    fetch(
+      `https://secret-dusk-46242.herokuapp.com/available?date=${formattedDate}`
+    ).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="my-10">

@@ -3,6 +3,7 @@ import PrimaryButton from "../Shared/PrimaryButton";
 
 import doctor from "../../assets/images/doctor.png";
 import appointment from "../../assets/images/appointment.png";
+import { Link } from "react-router-dom";
 
 const MakeAppointment = () => {
   return (
@@ -25,7 +26,9 @@ const MakeAppointment = () => {
           opposed to using 'Content here, content here', making it look like
           readable English. Many desktop publishing packages and web page
         </p>
-        <PrimaryButton>Get Started</PrimaryButton>
+        <Link to="/appointment">
+          <PrimaryButton>Get Started</PrimaryButton>
+        </Link>
       </div>
     </section>
   );
