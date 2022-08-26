@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         textOne: "#3A4256",
+        dashboardBg: "#E6E6E6",
       },
       lineHeight: {
         extra: "4.063rem",
