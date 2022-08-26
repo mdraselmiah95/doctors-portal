@@ -9,4 +9,3 @@ const MyReview = () => {
 };
 
 export default MyReview;
-<h2>This is MyReview</h2>;
