@@ -13,12 +13,21 @@ const MyAppointments = () => {
         .then((data) => setAppointments(data));
     }
   }, [user]);
-  console.log(appointments);
+  // console.log(appointments);
+  //today
+  var todayDate = new Date().toLocaleString("en-us", {
+    month: "long",
+    year: "numeric",
+    day: "numeric",
+  });
   return (
     <div>
-      <h2 className=" mb-4 font-semibold">
-        My Appointments: {appointments.length}
-      </h2>
+      <div className="items-center justify-between mb-4 md:flex">
+        <h2 className="text-2xl ">My Appointments: {appointments.length}</h2>
+        <h2 className="p-3 mt-4 font-medium border border-black rounded-lg md:mt-0">
+          {todayDate}
+        </h2>
+      </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead className="">
