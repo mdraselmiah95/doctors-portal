@@ -9,6 +9,12 @@
 3. Tailwindcss
 4. DaisyUi
 5. Firebase
+6. React Firebase Hooks
+7. React Query
+8. Date-fns
+9. React Toastify
+10. Express.js
+11. MongoBD
 
 # Preview
 
