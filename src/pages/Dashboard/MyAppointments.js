@@ -14,8 +14,7 @@ const MyAppointments = () => {
     }
   }, [user]);
   // console.log(appointments);
-  //today
-  var todayDate = new Date().toLocaleString("en-us", {
+  const todayDate = new Date().toLocaleString("en-us", {
     month: "long",
     year: "numeric",
     day: "numeric",
@@ -30,7 +29,7 @@ const MyAppointments = () => {
       </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
-          <thead className="">
+          <thead className="text-black ">
             <tr>
               <th></th>
               <th>Name</th>
@@ -42,7 +41,7 @@ const MyAppointments = () => {
           </thead>
           <tbody>
             {appointments.map((a, index) => (
-              <tr key={a._id}>
+              <tr key={a._id} className="text-black ">
                 <th>{index + 1}</th>
                 <td>{a.patientName}</td>
                 <td>{a.data}</td>
