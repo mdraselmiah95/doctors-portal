@@ -28,10 +28,10 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (error || gUser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [user, gUser, from, navigate, error]);
+  }, [token, from, navigate, error]);
 
   if (loading || gLoading) {
     return <Loading />;
