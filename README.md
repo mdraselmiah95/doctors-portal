@@ -14,7 +14,8 @@
 8. Date-fns
 9. React Toastify
 10. Express.js
-11. MongoBD
+11. Json Web Token
+12. MongoBD
 
 # Preview
 
