@@ -23,6 +23,7 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const [token] = useToken(user || gUser);
+  console.log(user, gUser);
 
   let signInError;
   const navigate = useNavigate();
@@ -40,11 +41,12 @@ const SignUp = () => {
       </p>
     );
   }
-
+  if (token) {
+    navigate("/appointment");
+  }
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    navigate("/appointment");
   };
   return (
     <div className="flex items-center justify-center h-screen">
