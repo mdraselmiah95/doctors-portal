@@ -5,8 +5,10 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import About from "./pages/About/About";
 import Appointment from "./pages/Appointment/Appointment";
+import AddDoctor from "./pages/Dashboard/AddDoctor";
 import AllAppointment from "./pages/Dashboard/AllAppointment";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import ManageDoctors from "./pages/Dashboard/ManageDoctors";
 import MyAppointments from "./pages/Dashboard/MyAppointments";
 import MyHistory from "./pages/Dashboard/MyHistory";
 import MyReview from "./pages/Dashboard/MyReview";
@@ -56,6 +58,22 @@ function App() {
             element={
               <RequireAdmin>
                 <AllAppointment />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="addDoctor"
+            element={
+              <RequireAdmin>
+                <AddDoctor />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageDoctor"
+            element={
+              <RequireAdmin>
+                <ManageDoctors />
               </RequireAdmin>
             }
           />
