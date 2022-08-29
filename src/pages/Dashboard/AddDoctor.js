@@ -8,16 +8,23 @@ const AddDoctor = () => {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
   } = useForm();
 
   //React Query
   const { data: services, isLoading } = useQuery("services", () =>
     fetch("http://localhost:5000/services").then((res) => res.json())
   );
+  /**
+   * 3 ways to store images
+   * 1. Third party storage //Free open public storage is ok for Practice project
+   * 2. Your own storage in your own server (file system)
+   * 3. Database: Mongodb
+   *
+   * YUP: to validate file: Search: Yup file validation for react hook form
+   */
 
   const onSubmit = (data) => {
-    console.log("Data", data);
+    console.log("My Form Data", data);
   };
 
   if (isLoading) {
