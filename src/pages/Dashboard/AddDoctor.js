@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 
 const AddDoctor = () => {
   const {
@@ -8,14 +10,25 @@ const AddDoctor = () => {
     handleSubmit,
     reset,
   } = useForm();
+
+  //React Query
+  const { data: services, isLoading } = useQuery("services", () =>
+    fetch("http://localhost:5000/services").then((res) => res.json())
+  );
+
   const onSubmit = (data) => {
-    console.log(data);
+    console.log("Data", data);
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <div>
+    <div className="flex flex-col items-center ">
       <h2 className="text-2xl">Add a New Doctor</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="w-full max-w-xs form-control">
+        <div className="w-full form-control">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
@@ -78,13 +91,13 @@ const AddDoctor = () => {
           </label>
           <select
             {...register("specialty")}
-            class="select input-bordered w-full max-w-xs"
+            className="w-full max-w-xs select input-bordered"
           >
-            {/* {services.map((service) => (
+            {services.map((service) => (
               <option key={service._id} value={service.name}>
                 {service.name}
               </option>
-            ))} */}
+            ))}
           </select>
         </div>
 
