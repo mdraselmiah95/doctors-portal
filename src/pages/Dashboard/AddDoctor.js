@@ -14,17 +14,51 @@ const AddDoctor = () => {
   const { data: services, isLoading } = useQuery("services", () =>
     fetch("http://localhost:5000/services").then((res) => res.json())
   );
+
+  const imageStorageKey = "a0db073f3ff58ba08bb4b1b3737e1555";
+
   /**
-   * 3 ways to store images
-   * 1. Third party storage //Free open public storage is ok for Practice project
+   *  Three ways to store images
+   * 1. Third party storage // Free open public storage is ok for Practice project
    * 2. Your own storage in your own server (file system)
    * 3. Database: Mongodb
-   *
    * YUP: to validate file: Search: Yup file validation for react hook form
    */
 
   const onSubmit = (data) => {
-    console.log("My Form Data", data);
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          const img = result.data.url;
+          const doctor = {
+            name: data.name,
+            email: data.email,
+            specialty: data.specialty,
+            img: img,
+          };
+          // send to your database
+          fetch("http://localhost:5000/doctor", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(doctor),
+          })
+            .then((res) => res.json())
+            .then((inserted) => {
+              console.log("Doctors inserted", inserted);
+            });
+        }
+      });
   };
 
   if (isLoading) {
