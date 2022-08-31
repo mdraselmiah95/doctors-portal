@@ -12,11 +12,12 @@ const AddDoctor = () => {
     reset,
   } = useForm();
 
-  //React Query
+  // React Query
   const { data: services, isLoading } = useQuery("services", () =>
     fetch("http://localhost:5000/services").then((res) => res.json())
   );
 
+  //Imgbb's API
   const imageStorageKey = "a0db073f3ff58ba08bb4b1b3737e1555";
 
   /**
@@ -46,6 +47,7 @@ const AddDoctor = () => {
             specialty: data.specialty,
             img: img,
           };
+
           // send to your database
           fetch("http://localhost:5000/doctor", {
             method: "POST",
@@ -68,6 +70,7 @@ const AddDoctor = () => {
       });
   };
 
+  // Loading
   if (isLoading) {
     return <Loading />;
   }
