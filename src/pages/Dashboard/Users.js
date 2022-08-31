@@ -4,6 +4,7 @@ import Loading from "../Shared/Loading";
 import UserRow from "./UserRow";
 
 const Users = () => {
+  // React Query
   const {
     data: users,
     isLoading,

@@ -42,7 +42,7 @@ const ManageDoctors = () => {
                 key={doctor._id}
                 doctor={doctor}
                 index={index}
-                // refetch={refetch}
+                refetch={refetch}
                 // setDeletingDoctor={setDeletingDoctor}
               ></DoctorRow>
             ))}
