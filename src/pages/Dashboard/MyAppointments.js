@@ -75,10 +75,10 @@ const MyAppointments = () => {
                       <p>
                         <span className="text-success">Paid</span>
                       </p>
-                      {/* <p>
+                      <p>
                         Transaction id:
                         <span className="text-success">{a.transactionId}</span>
-                      </p> */}
+                      </p>
                     </div>
                   )}
                 </td>
