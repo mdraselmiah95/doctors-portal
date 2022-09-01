@@ -7,6 +7,7 @@ const Payment = () => {
   const { id } = useParams();
   const url = `http://localhost:5000/booking/${id}`;
 
+  // React Query
   const { data: appointment, isLoading } = useQuery(["booking", id], () =>
     fetch(url, {
       method: "GET",
@@ -19,8 +20,9 @@ const Payment = () => {
   if (isLoading) {
     return <Loading />;
   }
+
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
         <div className="card-body">
           <p className="text-success font-bold">
@@ -29,8 +31,8 @@ const Payment = () => {
           <h2 className="card-title">Please Pay for {appointment.treatment}</h2>
           <p>
             Your Appointment:
-            <span className="text-orange-700">{appointment.date}</span> at
-            {appointment.slot}
+            <span className=" text-orange-400">{appointment.date}</span>at
+            <span> {appointment.slot}</span>
           </p>
           <p>Please pay: ${appointment.price}</p>
         </div>
