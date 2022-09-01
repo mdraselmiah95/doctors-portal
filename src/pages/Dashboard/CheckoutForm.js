@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import Loading from "../Shared/Loading";
 
 const CheckoutForm = ({ appointment }) => {
   const stripe = useStripe();
@@ -86,6 +87,7 @@ const CheckoutForm = ({ appointment }) => {
         .then((res) => res.json())
         .then((data) => {
           setProcessing(false);
+          // console.log(data);
         });
     }
   };
@@ -117,6 +119,7 @@ const CheckoutForm = ({ appointment }) => {
           Pay
         </button>
       </form>
+      {processing ? <Loading /> : ""}
       {cardError && <p className="text-red-500">{cardError}</p>}
       {success && (
         <div className="text-green-500">
