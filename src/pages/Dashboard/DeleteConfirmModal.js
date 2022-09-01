@@ -29,7 +29,8 @@ const DeleteConfirmModal = ({ deletingDoctor, refetch, setDeletingDoctor }) => {
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <h3 className="text-lg font-bold text-red-500">
-            Are you sure you want to delete {name}!
+            Are you sure you want to delete
+            <span className=" underline"> {name}</span> !
           </h3>
           <p className="py-4">
             You've been selected for a chance to get one year of subscription to
