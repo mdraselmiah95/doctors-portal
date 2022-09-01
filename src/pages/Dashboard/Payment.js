@@ -42,7 +42,10 @@ const Payment = () => {
             <span className=" text-orange-400">{appointment.date}</span>at
             <span> {appointment.slot}</span>
           </p>
-          <p>Please pay: ${appointment.price}</p>
+          <p className=" font-medium">
+            Please pay:
+            <span className=" font-bold"> ${appointment.price}</span>
+          </p>
         </div>
       </div>
       <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">

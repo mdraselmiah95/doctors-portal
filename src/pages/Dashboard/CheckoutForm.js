@@ -49,6 +49,7 @@ const CheckoutForm = ({ appointment }) => {
     setCardError(error?.message || "");
     setSuccess("");
     setProcessing(true);
+
     // confirm card payment
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clientSecret, {
@@ -67,7 +68,6 @@ const CheckoutForm = ({ appointment }) => {
     } else {
       setCardError("");
       setTransactionId(paymentIntent.id);
-      console.log(paymentIntent);
       setSuccess("Congrats! Your payment is completed.");
     }
   };
@@ -103,8 +103,10 @@ const CheckoutForm = ({ appointment }) => {
         <div className="text-green-500">
           <p>{success} </p>
           <p>
-            Your transaction Id:{" "}
-            <span className="text-orange-500 font-bold">{transactionId}</span>
+            Your transaction Id:
+            <span className="text-orange-500 font-semibold">
+              {transactionId}
+            </span>
           </p>
         </div>
       )}
