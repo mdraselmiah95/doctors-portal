@@ -4,7 +4,7 @@ import Loading from "../Shared/Loading";
 
 const AllAppointment = () => {
   const { data: appointments, isLoading } = useQuery("allAppointment", () =>
-    fetch("http://localhost:5000/appointments", {
+    fetch("https://doctors-portals-by-rasel.herokuapp.com/appointments", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

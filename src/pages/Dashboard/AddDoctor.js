@@ -14,7 +14,9 @@ const AddDoctor = () => {
 
   // React Query
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/services").then((res) => res.json())
+    fetch("https://doctors-portals-by-rasel.herokuapp.com/services").then(
+      (res) => res.json()
+    )
   );
 
   //Imgbb's API
@@ -49,7 +51,7 @@ const AddDoctor = () => {
           };
 
           // send to your database
-          fetch("http://localhost:5000/doctor", {
+          fetch("https://doctors-portals-by-rasel.herokuapp.com/doctor", {
             method: "POST",
             headers: {
               "content-type": "application/json",

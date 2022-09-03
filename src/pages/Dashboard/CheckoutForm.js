@@ -14,14 +14,17 @@ const CheckoutForm = ({ appointment }) => {
   const { _id, price, patient, patientName } = appointment;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      "https://doctors-portals-by-rasel.herokuapp.com/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.clientSecret) {
@@ -76,7 +79,7 @@ const CheckoutForm = ({ appointment }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/booking/${_id}`, {
+      fetch(`https://doctors-portals-by-rasel.herokuapp.com/booking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -112,7 +115,7 @@ const CheckoutForm = ({ appointment }) => {
           }}
         />
         <button
-          className="btn btn-success btn-sm mt-4"
+          className="mt-4 btn btn-success btn-sm"
           type="submit"
           disabled={!stripe || !clientSecret || success}
         >
@@ -126,7 +129,7 @@ const CheckoutForm = ({ appointment }) => {
           <p>{success} </p>
           <p>
             Your transaction Id:
-            <span className="text-orange-500 font-semibold">
+            <span className="font-semibold text-orange-500">
               {transactionId}
             </span>
           </p>

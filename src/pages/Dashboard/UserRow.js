@@ -5,12 +5,15 @@ const UserRow = ({ user, refetch }) => {
   const { email, role } = user;
 
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/users/admin/${email}`, {
-      method: "PUT",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://doctors-portals-by-rasel.herokuapp.com/users/admin/${email}`,
+      {
+        method: "PUT",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 403) {
           toast.error("Failed to Make an admin");

@@ -15,9 +15,9 @@ const AvailableAppointments = ({ date }) => {
     isLoading,
     refetch,
   } = useQuery(["available", formattedDate], () =>
-    fetch(`http://localhost:5000/available?date=${formattedDate}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://doctors-portals-by-rasel.herokuapp.com/available?date=${formattedDate}`
+    ).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -57,7 +57,7 @@ export default AvailableAppointments;
  * const [services, setServices] = useState([]);
   //fetching data from local server normal system
   useEffect(() => {
-    fetch(`http://localhost:5000/available?date=${formattedDate}`)
+    fetch(`https://doctors-portals-by-rasel.herokuapp.com/available?date=${formattedDate}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [formattedDate]);
