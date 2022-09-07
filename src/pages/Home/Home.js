@@ -10,6 +10,7 @@ import Treatment from "./Treatment";
 
 const Home = () => {
   return (
+    // Home Page all section
     <div>
       <Banner />
       <Info />

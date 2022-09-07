@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const MakeAppointment = () => {
   return (
     <section
+      // set background image
       style={{
         background: `url(${appointment})`,
       }}
