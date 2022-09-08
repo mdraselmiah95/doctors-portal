@@ -6,7 +6,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-// Create a client
+// Create a client React Query
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

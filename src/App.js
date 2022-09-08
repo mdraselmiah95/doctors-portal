@@ -24,6 +24,7 @@ import Navbar from "./pages/Shared/Navbar";
 function App() {
   return (
     <div className="px-4 mx-auto max-w-7xl lg:px-12">
+      {/* NavBar Show all routes */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
