@@ -28,6 +28,7 @@ const SignUp = () => {
   let signInError;
   const navigate = useNavigate();
 
+  // Loading
   if (loading || gLoading || updating) {
     return <Loading />;
   }

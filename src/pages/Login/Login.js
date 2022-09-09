@@ -20,7 +20,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  //Use Token
+  // Use Token
   const [token] = useToken(user || gUser);
 
   let signInError;
@@ -34,6 +34,7 @@ const Login = () => {
     }
   }, [token, from, navigate, error]);
 
+  // Loader
   if (loading || gLoading) {
     return <Loading />;
   }
