@@ -7,6 +7,7 @@ import bg from "../../assets/images/bg.png";
 
 const AppointmentBanner = ({ date, setDate }) => {
   return (
+    // Background Image
     <div
       style={{
         background: `url(${bg})`,

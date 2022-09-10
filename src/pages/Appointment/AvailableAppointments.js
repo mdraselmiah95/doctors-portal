@@ -20,6 +20,7 @@ const AvailableAppointments = ({ date }) => {
     ).then((res) => res.json())
   );
 
+  // Loading
   if (isLoading) {
     return <Loading />;
   }
